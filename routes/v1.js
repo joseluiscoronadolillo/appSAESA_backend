@@ -9,6 +9,8 @@ const UserController = require('./../controllers/UserController');
 const SubestacionController = require('./../controllers/SubestacionController');
 const TrampaController = require('./../controllers/TrampaController');
 const OtController = require('./../controllers/OtController');
+const EquipoController = require('./../controllers/EquipoController');
+const ComponenteController = require('./../controllers/ComponenteController');
 
 require('./../middleware/passport')(passport)
 /* GET home page. */
@@ -24,5 +26,9 @@ router.get('/subestacions',SubestacionController.getAll);
 router.get('/ots/:numero_ot',OtController.getOt);
 
 router.get('/trampas/:se_id',TrampaController.getAllForSe);
+
+router.get('/equipos/:se_id',EquipoController.getAllForSe);
+
+router.get('/componentes/:se_id',ComponenteController.getAllForSe);
 
 module.exports = router;
